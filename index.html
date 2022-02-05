@@ -35,31 +35,51 @@
       border-radius: 20px;
       padding: 15px;
       background-color: hsl(216, 50%, 16%);
+      box-shadow: 0 0 35px 5px #0000003b;
     }
-    .card-img-top{
-      border-radius: 10px;
+    .card-img-top{ border-radius: 10px; }
+    a{text-decoration: none;}
+    .img-a{ position: relative;}
+    a:hover{color:hsl(178, 100%, 50%);}
+    .img-a:hover::after{
+    content: "";
+    background: hsl(178deg 100% 50% / 51%);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    left: 0;
+    border-radius: 10px;
     }
-    hr{
-      color:hsl(215, 32%, 27%);
-  }
-    .card-title,.creator-name{
-      color: hsl(0, 0%, 100%);
+    .img-a:hover::before{
+      content: url(images/icon-view.svg);
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right:0;
+      bottom:0;
+      left: 0;
+      width: 50px;
+      cursor: pointer;
+      height: 50px;
+      margin:auto;
     }
-    .time{
-      color: hsl(178, 100%, 50%);
+
+    hr{color:hsl(215, 32%, 27%); }
+    a.card-title,a.creator-name, a{color: hsl(0, 0%, 100%);
     }
-    .creator img{
-      width: 40px;
-    }
+    .time{color: hsl(178, 100%, 50%); }
+    .creator img{width: 40px; }
   </style>
 </head>
 <body>
 <main>
 
   <div class="card" >
-    <img src="images/image-equilibrium.jpg" class="card-img-top" alt="image of diamond">
+   <a class="img-a"> <img src="images/image-equilibrium.jpg" class="card-img-top" alt="image of diamond"></a>
     <div class="card-body">
-      <h5 class="card-title">Equilibrium #3429</h5>
+      <h5 class="card-title"><a href="#">Equilibrium #3429</a> </h5>
       <p class="card-text">Our Equilibrium collection promotes balance and calm.</p>
       <div class="d-flex justify-content-between">
         <span class="time"><img src="images/icon-ethereum.svg" alt=""> 0.041 ETH</span><span> <img src="images/icon-clock.svg" alt=""> 3 days left</span>
@@ -67,7 +87,7 @@
       <hr>
       <div class="creator">
       <img src="images/image-avatar.png" class="border border-white rounded-circle" alt="Image of creator"> 
-      <p class="d-inline ms-2">Creation of <span class="creator-name">Jules Wyvern</span></p> 
+      <p class="d-inline ms-2">Creation of <span class="creator-name"> <a href="#">Jules Wyvern</a> </span></p> 
       </div>
     </div>
   </div>
